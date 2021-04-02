@@ -1,7 +1,7 @@
 ---
 - !ruby/object:Booking
-  name: fs
-  age: 0
+  name: Oliv
+  age: 23
   date: 10 October 2022
   seat_class: First-class
-  reference: 3BMHTDWI
+  reference: FYTH4SFC

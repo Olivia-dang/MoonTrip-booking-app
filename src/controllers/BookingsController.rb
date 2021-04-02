@@ -14,6 +14,7 @@ class BookingsController
         
         #display flight itinerary
         Headers::clear
-        # p new_booking.display_booking
+        Headers::receipt_header
+        p new_booking.display_booking
     end
 end

@@ -19,4 +19,12 @@ module Headers
             sleep(0.2)
         end
     end
+    def self.receipt_header
+        puts HEADER_LINE
+        puts "Moonlight Travel".center(HEADER_LENGTH)
+        puts "Address: 7 Kelly Street, Ultimo, NSW 2007, Australia" 
+        puts "Email: info.moonlight-travel.com"
+        puts "Phone: 13999999"
+        puts HEADER_LINE
+    end
 end
