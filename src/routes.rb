@@ -9,6 +9,8 @@ module Routes
             BookingsController::show
         # when 3
         #     BookingsController::update
+        when 4
+            BookingsController::delete
         when 5
             BookingsController::list
         end

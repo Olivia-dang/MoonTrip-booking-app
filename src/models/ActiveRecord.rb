@@ -27,4 +27,11 @@ class ActiveRecord
         raise "Invalid booking reference" unless booking
         return booking
     end
+    def delete
+        return if @reference.nil?
+        idx = BOOKINGS.index {|booking| booking.reference == @reference}
+        @reference = BOOKINGS[idx] = nil
+        BOOKINGS.reject! {|item| item.nil? || item == ""}
+        File.open('bookings.yml', 'w') {|file| file.write(BOOKINGS.to_yaml)}
+    end
 end
