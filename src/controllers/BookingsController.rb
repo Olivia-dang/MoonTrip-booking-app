@@ -14,7 +14,10 @@ class BookingsController
         
         #display flight itinerary
         Headers::clear
+        puts "Thank you for your booking"
         Headers::receipt_header
-        p new_booking.display_booking
+        new_booking.display_booking
+        puts Headers::HEADER_LINE
+        Headers::return_main_menu
     end
 end

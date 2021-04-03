@@ -3,10 +3,16 @@ require 'securerandom' #add library
 
 module AddNew
     def self.create
-        print "What is the passenger's name? "
-        name = gets.chomp
-        print "How old is the passenger? "
-        age = gets.chomp.to_i
+        # print "What is the passenger's name? "
+        # name = gets.chomp
+        # print "How old is the passenger? "
+        # age = gets.chomp.to_i
+        name = TTY::Prompt.new.ask("What is the passenger's name? ") do |q|
+            q.validate (/^[a-zA-Z ]*$/)
+        end
+        age = TTY::Prompt.new.ask("How old is the passenger? ") do |q|
+            q.validate (/^(1[89]|[2-9]\d)$/)
+        end
         
         date = TTY::Prompt.new.select ("Choose departure date") do |menu|
             menu.choice "10 October 2022"

@@ -22,9 +22,16 @@ module Headers
     def self.receipt_header
         puts HEADER_LINE
         puts "Moonlight Travel".center(HEADER_LENGTH)
+        puts 
         puts "Address: 7 Kelly Street, Ultimo, NSW 2007, Australia" 
         puts "Email: info.moonlight-travel.com"
         puts "Phone: 13999999"
         puts HEADER_LINE
+    end
+    # Return to the main menu
+    def self.return_main_menu
+        puts "\n\n Press any key to go back to the main menu"
+        $stdin.getch
+        clear
     end
 end
