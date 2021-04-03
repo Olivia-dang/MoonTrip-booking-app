@@ -1,6 +1,7 @@
 module Views 
     module Bookings
         def self.show(booking:)
+            return puts('Invalid reference') unless booking
             contents = rows_for booking
             table = TTY::Table.new contents
             puts table.render(:ascii, padding: [0, 1, 0, 1])

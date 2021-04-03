@@ -7,6 +7,10 @@ module Routes
             BookingsController::create
         when 2
             BookingsController::show
+        # when 3
+        #     BookingsController::update
+        when 5
+            BookingsController::list
         end
     end
 end

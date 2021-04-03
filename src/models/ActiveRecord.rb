@@ -4,6 +4,9 @@ class ActiveRecord
     attr_reader :reference
     #retrieve the data in bookings.yml. If not exists, rescue will create a new array
     BOOKINGS = YAML.load(File.read('bookings.yml')) rescue []
+    def self.all
+        BOOKINGS
+    end
     def valid?
         true
     end
