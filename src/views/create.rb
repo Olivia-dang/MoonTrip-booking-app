@@ -3,10 +3,6 @@ require 'securerandom' #add library
 
 module AddNew
     def self.create
-        # print "What is the passenger's name? "
-        # name = gets.chomp
-        # print "How old is the passenger? "
-        # age = gets.chomp.to_i
         name = TTY::Prompt.new.ask("What is the passenger's name? ") do |q|
             q.validate (/^[a-zA-Z ]*$/)
         end
