@@ -15,7 +15,6 @@ class BookingsController
         
         #display flight itinerary
         Headers::clear
-        puts "Thank you for your booking"
         Headers::receipt_header
         new_booking.display_booking
         puts Headers::HEADER_LINE
@@ -23,9 +22,9 @@ class BookingsController
     end
     def self.show
         requested_reference = Booking.fetch_reference  
-        show_booking = Booking.find(requested_reference) rescue nil
+        show_booking = Booking.find(requested_reference) rescue "Wrong booking reference"
         #fetch_reference and find() is written in ActiveRecord, but Booking < ActiveRecord so it inherits all
-        
+        Headers::clear
         Views::Bookings.show booking: show_booking
         Headers::return_main_menu
     end

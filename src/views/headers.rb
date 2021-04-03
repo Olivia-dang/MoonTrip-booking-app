@@ -10,6 +10,8 @@ module Headers
     def self.loading_effect(string)
         string.length.times do |i|
             clear
+            puts "Thank you for your booking"
+            
             puts HEADER_LINE
             puts "Please wait and relax".center(HEADER_LENGTH)
             puts HEADER_LINE
@@ -30,7 +32,7 @@ module Headers
     end
     # Return to the main menu
     def self.return_main_menu
-        puts "\n\n Press any key to go back to the main menu"
+        puts "\n\nPress any key to go back to the main menu"
         $stdin.getch
         clear
     end

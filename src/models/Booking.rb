@@ -14,12 +14,14 @@ class Booking < ActiveRecord
     def display_booking
         puts "Flight itinerary".center(62)  #HEADER_LENGTH is 62
         puts
-        puts "Reference number: #{@reference}"
+        puts "Booking Reference: #{@reference}".green
         puts
-        puts "Booking contact details \n Passenger's name: #{@name} \n Age: #{age}\n Departure date: #{@date} \n Seat class: #{seat_class} \n"
+        puts "Booking contact details \n Passenger's name: #{@name} \n Age: #{@age}\n Departure date: #{@date} \n Seat class: #{@seat_class} \n"
         puts
-        puts "Departing from:  Kennedy Space Center"
+        puts "Departing from:  Macquarie Space Center"
         puts
         puts "Times are local times in Sydney"
+        puts 
+        puts "If you would like to change information or view your booking, please use to the booking reference"
     end    
 end

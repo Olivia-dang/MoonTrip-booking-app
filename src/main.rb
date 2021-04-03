@@ -1,6 +1,7 @@
 require "./routes"
 require "tty-prompt"
 require "tty-table"
+require "colorize"
 
 puts "Fly me to the moon"
 begin
