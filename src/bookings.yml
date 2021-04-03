@@ -1,7 +1,7 @@
 ---
 - !ruby/object:Booking
-  name: esa
-  age: '34'
+  name: fds
+  age: '65'
   date: 10 October 2022
   seat_class: First-class
-  reference: RBFVQHDZ
+  reference: KUWCJ7

@@ -1,6 +1,7 @@
 require_relative "../models/Booking"
 require_relative "../views/create"
 require_relative "../views/headers"
+require_relative "../views/show"
 
 class BookingsController
     def self.create 
@@ -18,6 +19,14 @@ class BookingsController
         Headers::receipt_header
         new_booking.display_booking
         puts Headers::HEADER_LINE
+        Headers::return_main_menu
+    end
+    def self.show
+        requested_reference = Booking.fetch_reference  
+        show_booking = Booking.find(requested_reference) rescue nil
+        #fetch_reference and find() is written in ActiveRecord, but Booking < ActiveRecord so it inherits all
+        
+        Views::Bookings.show booking: show_booking
         Headers::return_main_menu
     end
 end

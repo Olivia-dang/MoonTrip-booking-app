@@ -5,7 +5,8 @@ module Routes
         case choice
         when 1
             BookingsController::create
-        # when 2 
+        when 2
+            BookingsController::show
         end
     end
 end
