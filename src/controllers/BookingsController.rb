@@ -16,20 +16,17 @@ class BookingsController
         # Headers::loading_effect("Loading your flight itinerary...")      #remember to uncomment later. mute just for faster test
         
         #display your new booking
-        Headers::clear
-        Headers::receipt_header
-        new_booking.display_booking
-        puts Headers::HEADER_LINE
-        Headers::return_main_menu
+        display(new_booking)
     end
 
+    
     def self.list
         bookings = Booking::all
         Headers::clear
         Views::Bookings.index(bookings)
         Headers::return_main_menu
     end
-
+    
     def self.show
         requested_reference = Booking.fetch_reference  
         show_booking = Booking.find(requested_reference) rescue nil
@@ -38,21 +35,33 @@ class BookingsController
         Views::Bookings.show booking: show_booking
         Headers::return_main_menu
     end
-
+    
     def self.delete 
         requested_reference = Booking.fetch_reference  
         booking = Booking.find(requested_reference) rescue nil
-        return puts('Invalid reference') unless booking
+        return puts('Invalid reference, please key in the correct reference') unless booking
         booking.delete
         Headers::return_main_menu
     end
     
-    # def self.update
-    #     requested_reference = Booking.fetch_reference  
-    #     booking = Booking.find(requested_reference) rescue nil
-    #     name, age, date, seat_class = Views::Bookings.create
-               
-    #     Views::Bookings.show booking: booking
-    # end
-
+    def self.update
+        tmp = requested_reference = Booking.fetch_reference  
+        booking = Booking.find(requested_reference) rescue nil
+        return puts('Invalid reference, please key in the correct reference') unless booking
+        
+        #delete this booking and create new content, keeping the same reference
+        booking.delete
+        name, age, date, seat_class = Views::Bookings.create     
+        modified = Booking.new(name, age, date, seat_class)
+        modified.update(tmp)
+        display(modified)
+    end
+    
+    def self.display(receipt)
+        Headers::clear
+        Headers::receipt_header
+        receipt.display_booking
+        puts Headers::HEADER_LINE
+        Headers::return_main_menu
+    end
 end

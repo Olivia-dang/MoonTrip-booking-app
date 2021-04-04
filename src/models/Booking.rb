@@ -5,7 +5,7 @@ class Booking < ActiveRecord
     attr_reader :name, :age, :date, :seat_class, :reference
     
     def initialize(name, age, date, seat_class)
-        @name = name
+        @name = name.capitalize()
         @age = age
         @date = date
         @seat_class = seat_class
@@ -22,6 +22,6 @@ class Booking < ActiveRecord
         puts
         puts "Times are local times in Sydney"
         puts 
-        puts "If you would like to change information or view your booking, please use to the booking reference"
+        puts "If you would like to change information or view your booking, please use the booking reference"
     end    
 end

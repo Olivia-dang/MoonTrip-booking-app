@@ -24,6 +24,10 @@ class ActiveRecord
         @reference = SecureRandom.alphanumeric(4).upcase
         self.class.save(self) 
     end
+    def update(number)
+        @reference = number
+        self.class.save(self) 
+    end
 
     def self.fetch_reference
         TTY::Prompt.new.ask("Please enter your booking reference: ") do |q|

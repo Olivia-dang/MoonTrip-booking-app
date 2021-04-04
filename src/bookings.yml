@@ -11,3 +11,27 @@
   date: 10 October 2022
   seat_class: First-class
   reference: ZD2P
+- !ruby/object:Booking
+  name: world
+  age: '84'
+  date: 10 October 2022
+  seat_class: First-class
+  reference: 7WSE
+- !ruby/object:Booking
+  name: Rewiof
+  age: '32'
+  date: 10 October 2022
+  seat_class: First-class
+  reference: LDHY
+- !ruby/object:Booking
+  name: Df
+  age: '34'
+  date: 10 October 2022
+  seat_class: First-class
+  reference: NF0W
+- !ruby/object:Booking
+  name: Dtap
+  age: '83'
+  date: 11 November 2022
+  seat_class: First-class
+  reference: UL15

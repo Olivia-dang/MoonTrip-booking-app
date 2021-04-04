@@ -10,7 +10,7 @@ module Views
         end
         def self.list_for(bookings)
             bookings.map do |booking|
-                [booking.reference, booking.name, booking.age, booking.date, booking.seat_class]
+                [booking.reference, booking.date, booking.seat_class, booking.name, booking.age]
             end
         end
     end
