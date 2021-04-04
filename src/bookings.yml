@@ -3,5 +3,23 @@
   name: Olivia
   age: '28'
   date: 12 December 2022
-  reference: 0NTL
   package: Adventurer
+  reference: 0NTL
+- !ruby/object:Booking
+  name: Minh
+  age: '28'
+  date: 10 October 2022
+  package: Luxury
+  reference: LA3C
+- !ruby/object:Booking
+  name: Laura
+  age: '19'
+  date: 12 December 2022
+  package: Adventurer
+  reference: L3HE
+- !ruby/object:Booking
+  name: Pikachu
+  age: '35'
+  date: 11 November 2022
+  package: Adventurer
+  reference: UUAE

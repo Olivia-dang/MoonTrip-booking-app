@@ -11,14 +11,14 @@ module Views
                 menu.choice "11 November 2022"
                 menu.choice "12 December 2022"
             end
-            Views::Intro.package
             
+            Views::Intro.package
             package = TTY::Prompt.new.select ("Choose your Package") do |menu|
                 menu.choice "Luxury"
                 menu.choice "Adventurer"
             end
             begin 
-            name = TTY::Prompt.new.ask("What is the passenger's name? ") do |q|
+            name = TTY::Prompt.new.ask("What is the passenger's name? ").chomp do |q|
                 q.validate (/^[a-zA-Z ]*$/)
             end
             end until !name.nil?
