@@ -6,13 +6,13 @@ module Routes
         when 1
             BookingsController::create
         when 2
-            BookingsController::show
-        # when 3
-        #     BookingsController::update
-        when 4
-            BookingsController::delete
-        when 5
             BookingsController::list
+        when 3
+            BookingsController::show
+        # when 4
+            # BookingsController::update
+        when 5
+            BookingsController::delete
         end
     end
 end
