@@ -1,7 +1,8 @@
-require "./routes"
 require "tty-prompt"
 require "tty-table"
 require "colorize"
+require "tty-font"
+require "./routes"
 require_relative "./views/intro"
 require_relative "./views/headers"
 
