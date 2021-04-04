@@ -6,8 +6,7 @@ require_relative "./views/intro"
 
 puts "\e[2J\e[f"  #clear screen
 Views::Intro.intro
-puts 
-puts 
+puts  
 begin
     choice = TTY::Prompt.new.select("What would you like to do?") do |menu|
         menu.choice "Create a new booking", 1

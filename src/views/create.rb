@@ -1,7 +1,7 @@
 require "tty-prompt"
 require 'tty-table'
 require 'colorize'
-
+require_relative './intro'
 module Views
     module Bookings
         def self.create
@@ -11,9 +11,8 @@ module Views
                 menu.choice "11 November 2022"
                 menu.choice "12 December 2022"
             end
-            puts "Package information"
-            table = TTY::Table.new [["Luxury".green, "Adventurer".green],["content1","content2"], ["price1", "price2"] ]
-            puts table.render(:ascii, padding: [0, 1, 0, 1])
+            Views::Intro.package
+            
             package = TTY::Prompt.new.select ("Choose your Package") do |menu|
                 menu.choice "Luxury"
                 menu.choice "Adventurer"
