@@ -10,7 +10,7 @@ begin
         menu.choice "List all bookings", 2
         menu.choice "View your booking", 3
         menu.choice "Modify your booking", 4
-        menu.choice "Delete your booking", 5
+        menu.choice "Cancel your booking", 5
         menu.choice "Quit", 6
     end
     Routes.dispatch(choice)

@@ -13,7 +13,7 @@ module Views
             rows << ["    Passenger's name: #{booking.name}"] 
             rows << ["    Age: #{booking.age}"]
             rows << ["    Departure date: #{booking.date}"] 
-            rows << ["    Seat class: #{booking.seat_class}"]
+            rows << ["    Package: #{booking.package}"]
             rows << ["Departing from:  Macquarie Space Center"]
             return rows
         end

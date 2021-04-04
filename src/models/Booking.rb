@@ -2,13 +2,13 @@ require 'yaml'
 require_relative './ActiveRecord'
 
 class Booking < ActiveRecord
-    attr_reader :name, :age, :date, :seat_class, :reference
+    attr_reader :name, :age, :date, :package, :reference
     
-    def initialize(name, age, date, seat_class)
+    def initialize(name, age, date, package)
         @name = name.capitalize()
         @age = age
         @date = date
-        @seat_class = seat_class
+        @package = package
     end
 
     def display_booking
@@ -16,7 +16,7 @@ class Booking < ActiveRecord
         puts
         puts "Booking Reference: #{@reference}".green
         puts
-        puts "Booking contact details \n Passenger's name: #{@name} \n Age: #{@age}\n Departure date: #{@date} \n Seat class: #{@seat_class} \n"
+        puts "Booking contact details \n Passenger's name: #{@name} \n Age: #{@age}\n Departure date: #{@date} \n Package: #{@package} \n"
         puts
         puts "Departing from:  Macquarie Space Center"
         puts

@@ -8,8 +8,8 @@ require 'yaml'
 class BookingsController
     def self.create 
         Headers::clear
-        name, age, date, seat_class = Views::Bookings.create
-        new_booking = Booking.new(name, age, date, seat_class)
+        name, age, date, package = Views::Bookings.create
+        new_booking = Booking.new(name, age, date, package)
         new_booking.save
 
         #loading screen
@@ -37,6 +37,7 @@ class BookingsController
     end
     
     def self.delete 
+        puts "Please remember that this is a non-refundable booking, even if you cancel."
         requested_reference = Booking.fetch_reference  
         booking = Booking.find(requested_reference) rescue nil
         return puts('Invalid reference, please key in the correct reference') unless booking
@@ -51,12 +52,12 @@ class BookingsController
         
         #delete this booking and create new content, keeping the same reference
         booking.delete
-        name, age, date, seat_class = Views::Bookings.create     
-        modified = Booking.new(name, age, date, seat_class)
+        name, age, date, package = Views::Bookings.create     
+        modified = Booking.new(name, age, date, package)
         modified.update(tmp)
         display(modified)
     end
-    
+
     def self.display(receipt)
         Headers::clear
         Headers::receipt_header

@@ -24,14 +24,14 @@
   seat_class: First-class
   reference: LDHY
 - !ruby/object:Booking
-  name: Df
-  age: '34'
-  date: 10 October 2022
-  seat_class: First-class
-  reference: NF0W
-- !ruby/object:Booking
-  name: Dtap
-  age: '83'
+  name: Phong
+  age: '73'
   date: 11 November 2022
   seat_class: First-class
   reference: UL15
+- !ruby/object:Booking
+  name: Jk
+  age: '87'
+  date: 10 October 2022
+  seat_class: First-class
+  reference: GPH2
