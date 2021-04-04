@@ -2,42 +2,6 @@
 - !ruby/object:Booking
   name: Olivia
   age: '28'
-  date: 10 October 2022
-  reference: TAEC
-  seat_class: First-class
-- !ruby/object:Booking
-  name: Map
-  age: '45'
-  date: 10 October 2022
-  reference: ZD2P
-  seat_class: First-class
-- !ruby/object:Booking
-  name: world
-  age: '84'
-  date: 10 October 2022
-  reference: 7WSE
-  seat_class: First-class
-- !ruby/object:Booking
-  name: Rewiof
-  age: '32'
-  date: 10 October 2022
-  reference: LDHY
-  seat_class: First-class
-- !ruby/object:Booking
-  name: Phong
-  age: '73'
-  date: 11 November 2022
-  reference: UL15
-  seat_class: First-class
-- !ruby/object:Booking
-  name: Jk
-  age: '87'
-  date: 10 October 2022
-  reference: GPH2
-  seat_class: First-class
-- !ruby/object:Booking
-  name: Oi
-  age: '54'
-  date: 10 October 2022
-  package: Luxury
-  reference: AWJM
+  date: 12 December 2022
+  reference: 0NTL
+  package: Adventurer

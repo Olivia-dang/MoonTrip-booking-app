@@ -8,6 +8,7 @@ require 'yaml'
 class BookingsController
     def self.create 
         Headers::clear
+        Headers::main_header
         name, age, date, package = Views::Bookings.create
         new_booking = Booking.new(name, age, date, package)
         new_booking.save
@@ -23,6 +24,7 @@ class BookingsController
     def self.list
         bookings = Booking::all
         Headers::clear
+        Headers::main_header
         Views::Bookings.index(bookings)
         Headers::return_main_menu
     end
@@ -32,6 +34,7 @@ class BookingsController
         show_booking = Booking.find(requested_reference) rescue nil
         #fetch_reference and find() is written in ActiveRecord, but Booking < ActiveRecord so it inherits all
         Headers::clear
+        Headers::main_header
         Views::Bookings.show booking: show_booking
         Headers::return_main_menu
     end

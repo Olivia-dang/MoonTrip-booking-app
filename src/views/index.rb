@@ -3,7 +3,7 @@ module Views
         def self.index(bookings)
             return puts("No one has booked yet") unless bookings.length>0
             table = TTY::Table.new(
-                ["Reference", "Passenger's name", "Age", "Departure date", "package"],
+                ["Reference", "Departure date", "Package", "Passenger's name", "Age"],
                 list_for(bookings) 
             )
             puts table.render(:ascii, padding: [0, 1, 0, 1])

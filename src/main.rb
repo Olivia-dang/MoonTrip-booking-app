@@ -3,11 +3,16 @@ require "tty-prompt"
 require "tty-table"
 require "colorize"
 require_relative "./views/intro"
+require_relative "./views/headers"
 
-puts "\e[2J\e[f"  #clear screen
+
+Views::Intro.banner
+Views::Intro.continue_story
 Views::Intro.intro
-puts  
+Views::Intro.continue_story
 begin
+    puts "\e[2J\e[f"  #clear screen
+    Headers::main_header
     choice = TTY::Prompt.new.select("What would you like to do?") do |menu|
         menu.choice "Create a new booking", 1
         menu.choice "List all bookings", 2

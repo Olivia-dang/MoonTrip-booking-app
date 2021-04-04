@@ -1,7 +1,17 @@
 require 'colorize'
+require 'io/console'
+require 'tty-font'                                                                                                       
 
 module Views 
     module Intro 
+        def self.banner
+            puts "\e[2J\e[f"  #clear screen
+            font = TTY::Font.new(:starwars)
+            puts font.write("Moonlight")
+            puts font.write("Travel")
+            puts "\nLet's fly to the Moon\n".center(62)
+        end
+
         def self.intro 
             puts "Welcome to Moonlight Travel\n".center(62)
             puts "We are offering the ultimate space vacation - a 'Fly you to the Moon' trip. \nYou will have unforgettable moments observing the Milky Ways, millions of shining stars, and the whole universe with your own eyes. \nHow fascinating it is when you are one in millions to travel by rocket to space.
@@ -29,5 +39,10 @@ module Views
             ]
             packages.each {|item| puts item}
         end
+        def self.continue_story                                                                                                               
+            print "\n\nPress any key to continue"                                                                                                    
+            STDIN.getch                                                                                                              
+            print "            \r" # extra space to overwrite in case next sentence is short                                                                                                              
+        end  
     end
 end

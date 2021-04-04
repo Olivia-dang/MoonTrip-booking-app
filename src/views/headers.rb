@@ -36,4 +36,10 @@ module Headers
         $stdin.getch
         clear
     end
+    def self.main_header
+        puts HEADER_LINE
+        puts "Moonlight Travel".center(HEADER_LENGTH)
+        puts "Fly you to the Moon and back".center(HEADER_LENGTH)
+        puts HEADER_LINE
+    end
 end
