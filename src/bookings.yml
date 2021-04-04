@@ -1,24 +1,13 @@
 ---
 - !ruby/object:Booking
-  name: Oliv
-  age: '23'
-  date: Oct
-  seat_class: economy
-- !ruby/object:Booking
-  name: Oliv
-  age: '23'
-  date: Oct
-  seat_class: economy
-  reference: 0LLF
-- !ruby/object:Booking
   name: Olivia
   age: '28'
   date: 10 October 2022
   seat_class: First-class
   reference: TAEC
 - !ruby/object:Booking
-  name: iih
-  age: '90'
+  name: Map
+  age: '45'
   date: 10 October 2022
   seat_class: First-class
-  reference: EOU8
+  reference: ZD2P

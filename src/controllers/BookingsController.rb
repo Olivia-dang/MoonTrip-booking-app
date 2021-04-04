@@ -39,6 +39,14 @@ class BookingsController
         Headers::return_main_menu
     end
 
+    def self.delete 
+        requested_reference = Booking.fetch_reference  
+        booking = Booking.find(requested_reference) rescue nil
+        return puts('Invalid reference') unless booking
+        booking.delete
+        Headers::return_main_menu
+    end
+    
     # def self.update
     #     requested_reference = Booking.fetch_reference  
     #     booking = Booking.find(requested_reference) rescue nil
@@ -47,11 +55,4 @@ class BookingsController
     #     Views::Bookings.show booking: booking
     # end
 
-    # def self.delete 
-    #     requested_reference = Booking.fetch_reference  
-    #     booking = Booking.find(requested_reference) rescue nil
-    #     return puts('Invalid reference') unless booking
-    #     booking.delete
-    #     Headers::return_main_menu
-    # end
 end
