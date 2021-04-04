@@ -12,7 +12,7 @@ class Booking < ActiveRecord
     end
 
     def display_booking
-        puts "Flight itinerary".center(62)  #HEADER_LENGTH is 62
+        puts "Itinerary".center(62)  #HEADER_LENGTH is 62
         puts
         puts "Booking Reference: #{@reference}".green
         puts
@@ -20,8 +20,9 @@ class Booking < ActiveRecord
         puts
         puts "Departing from:  Macquarie Space Center"
         puts
-        puts "Times are local times in Sydney"
+        puts "As a part of the trip, passengers will fly around the Moon's orbit, land on the Moon, and visit International Space Station."
+        puts "Duration: 9 days 8 nights"
         puts 
-        puts "If you would like to change information or view your booking, please use the booking reference"
+        puts "If you would like to change information or view your booking, please use the booking reference\n"
     end    
 end

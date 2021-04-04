@@ -1,5 +1,6 @@
 require "tty-prompt"
-require 'securerandom' #add library 
+require 'tty-table'
+require 'colorize'
 
 module Views
     module Bookings
@@ -10,6 +11,9 @@ module Views
                 menu.choice "11 November 2022"
                 menu.choice "12 December 2022"
             end
+            puts "Package information"
+            table = TTY::Table.new [["Luxury".green, "Adventurer".green],["content1","content2"], ["price1", "price2"] ]
+            puts table.render(:ascii, padding: [0, 1, 0, 1])
             package = TTY::Prompt.new.select ("Choose your Package") do |menu|
                 menu.choice "Luxury"
                 menu.choice "Adventurer"
