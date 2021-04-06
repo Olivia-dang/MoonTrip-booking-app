@@ -10,7 +10,11 @@ class BookingsController
         Headers::clear
         Headers::main_header
         name, age, date, package = Views::Bookings.create
-        new_booking = Booking.new(name, age, date, package)
+        begin
+            new_booking = Booking.new(name, age, date, package) 
+        rescue NoMethodError => error
+        return 
+        end
         new_booking.save
 
         #loading screen

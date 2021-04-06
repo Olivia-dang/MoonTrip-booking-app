@@ -4,6 +4,8 @@ require 'colorize'
 require_relative './intro'
 module Views
     module Bookings
+        class InvalidAge < StandardError
+        end
         def self.create
             puts "Please keep in mind that this is a non-refundable booking. \nQualified passengers must be from 18 to 99 years old \n \n"
             date = TTY::Prompt.new.select ("Choose departure date") do |menu|
@@ -17,19 +19,29 @@ module Views
                 menu.choice "Luxury"
                 menu.choice "Adventurer"
             end
-            # begin
-                name = TTY::Prompt.new.ask("What is the passenger's name? ").chomp do |q|
-                    q.validate (/^[a-zA-Z ]*$/)
-                    q.messages[:valid?] = "Name should be comprised of uppercase, lowercase characters, and space"
-                end
-            # rescue NoMethodError => error 
-            #     puts "#{name.inspect} is not a valid name \n \n"
-            # retry 
-            # end
-
-            age = TTY::Prompt.new.ask("How old is the passenger? ") do |q|
-                q.validate (/^(1[89]|[2-9]\d)$/)
-                q.messages[:valid?] = "Age should be numbers from 18 to 99"
+            #Passenger's name input
+            tries = 0
+            begin
+                tries += 1
+                print "What is the passenger's name? "
+                name = gets.chomp 
+                raise NameError, "Invalid name" unless (/^[a-zA-Z .-]*$/).match(name)
+                raise NameError, "Invalid name" if name.empty?
+            rescue NameError => error 
+                puts "#{name.inspect} is not a valid name. Please try again \n"
+                retry if tries < 3
+                return
+            end
+            age_tries= 0
+            begin
+                age_tries += 1
+                print "How old is the passenger? "
+                age = gets.chomp
+                raise InvalidAge, "Invalid age" unless (/^(1[89]|[2-9]\d)$/).match(age)
+            rescue InvalidAge => error
+                puts "Age must be numbers from 18 to 99 \n"
+                retry if age_tries < 3
+                return
             end
             
             [name, age, date, package]

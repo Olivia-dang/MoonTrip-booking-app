@@ -41,3 +41,27 @@
   date: 10 October 2022
   package: Luxury
   reference: UXDR
+- !ruby/object:Booking
+  name: Io
+  age: '89'
+  date: 10 October 2022
+  package: Luxury
+  reference: PI16
+- !ruby/object:Booking
+  name: Oli
+  age: '23'
+  date: 10 October 2022
+  package: Luxury
+  reference: G06E
+- !ruby/object:Booking
+  name: 
+  age: 
+  date: 
+  package: 
+  reference: LK8X
+- !ruby/object:Booking
+  name: 
+  age: 
+  date: 
+  package: 
+  reference: L0DU
