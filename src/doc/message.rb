@@ -1,22 +1,19 @@
 require 'tty-prompt'
 
-# name = TTY::Prompt.new.ask("What is the passenger's name? ").chomp do |q|
-#     q.validate (/^[a-zA-Z ]*$/)
-#     q.messages[:valid?] = "Name should be comprised of uppercase, lowercase characters, and space"
+# age = TTY::Prompt.new.ask("How old is the passenger? ") do |q|
+#     q.validate (/^(1[89]|[2-9]\d)$/)
+#     q.messages[:valid?] = "Age should be numbers from 18 to 99"
 # end
-
-
-    # begin
-    
-# rescue NoMethodError => error 
-#     puts "#{name.inspect} is not a valid name \n \n"
-# retry 
-# end
-
-
-
-# prompt = TTY::Prompt.new
-# email = prompt.ask("What is your email?") do |q|
-#     q.validate(/\A\w+@\w+\.\w+\Z/)
-#     q.messages[:valid?] = "Invalid email address"
-# end
+tries =0
+class InvalidAge < StandardError
+end
+begin
+    tries += 1
+    print "How old is the passenger? "
+    age = gets
+    raise InvalidAge, "Invalid age" unless (/^(1[89]|[2-9]\d)$/).match(age)
+rescue InvalidAge => error
+    puts "Age must be numbers from 18 to 99"
+    retry if tries < 3
+    return
+end
