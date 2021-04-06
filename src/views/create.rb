@@ -17,13 +17,19 @@ module Views
                 menu.choice "Luxury"
                 menu.choice "Adventurer"
             end
-            begin 
-            name = TTY::Prompt.new.ask("What is the passenger's name? ").chomp do |q|
-                q.validate (/^[a-zA-Z ]*$/)
-            end
-            end until !name.nil?
+            # begin
+                name = TTY::Prompt.new.ask("What is the passenger's name? ").chomp do |q|
+                    q.validate (/^[a-zA-Z ]*$/)
+                    q.messages[:valid?] = "Name should be comprised of uppercase, lowercase characters, and space"
+                end
+            # rescue NoMethodError => error 
+            #     puts "#{name.inspect} is not a valid name \n \n"
+            # retry 
+            # end
+
             age = TTY::Prompt.new.ask("How old is the passenger? ") do |q|
                 q.validate (/^(1[89]|[2-9]\d)$/)
+                q.messages[:valid?] = "Age should be numbers from 18 to 99"
             end
             
             [name, age, date, package]

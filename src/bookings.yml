@@ -23,3 +23,21 @@
   date: 11 November 2022
   package: Adventurer
   reference: UUAE
+- !ruby/object:Booking
+  name: Lala
+  age: '45'
+  date: 11 November 2022
+  package: Adventurer
+  reference: HWDR
+- !ruby/object:Booking
+  name: Fds
+  age: '34'
+  date: 10 October 2022
+  package: Luxury
+  reference: HVXM
+- !ruby/object:Booking
+  name: '45'
+  age: '34'
+  date: 10 October 2022
+  package: Luxury
+  reference: UXDR
