@@ -30,10 +30,21 @@ class ActiveRecord
     end
 
     def self.fetch_reference
-        TTY::Prompt.new.ask("Please enter your booking reference: ") do |q|
-            q.validate (/^[A-Z0-9]*$/)
+        tries =0
+        begin
+            tries += 1
+            reference = TTY::Prompt.new.ask("Please enter your booking reference: ") do |q|
+                q.validate (/^[A-Z0-9]*$/)
+                q.messages[:valid?] = "Invalid. Reference is comprised of uppercase characters(A-Z) and numbers(0-9)"
+            end
+            raise NameError, "Reference cannot be empty" if reference.empty?
+        rescue NameError => e 
+            puts "Reference cannot be empty, try again!"
+            retry if tries < 3
+            return
         end
     end
+    
     def self.find(reference)
         booking = all.find {|ticket| ticket.reference == reference}
         raise "Invalid booking reference" unless booking

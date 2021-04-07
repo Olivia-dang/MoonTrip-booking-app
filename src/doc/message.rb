@@ -16,10 +16,6 @@ rescue NoMethodError, NameError=> error
     return
 end
 
-
-
-
-
 # age = TTY::Prompt.new.ask("How old is the passenger? ") do |q|
 #     q.validate (/^(1[89]|[2-9]\d)$/)
 #     q.messages[:valid?] = "Age should be numbers from 18 to 99"
