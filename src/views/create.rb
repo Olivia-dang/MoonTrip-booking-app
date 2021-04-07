@@ -28,7 +28,7 @@ module Views
                 raise NameError, "Invalid name" unless (/^[a-zA-Z .-]*$/).match(name)
                 raise NameError, "Invalid name" if name.empty?
             rescue NameError => error 
-                puts "#{name.inspect} is not a valid name. Please try again \n"
+                puts "#{name.inspect} is not a valid name. Please try again! \n"
                 retry if tries < 3
                 return
             end
@@ -39,7 +39,7 @@ module Views
                 age = gets.chomp
                 raise InvalidAge, "Invalid age" unless (/^(1[89]|[2-9]\d)$/).match(age)
             rescue InvalidAge => error
-                puts "Age must be numbers from 18 to 99 \n"
+                puts "Invalid. Age must be numbers from 18 to 99. Please try again! \n"
                 retry if age_tries < 3
                 return
             end
