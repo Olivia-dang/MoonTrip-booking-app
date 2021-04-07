@@ -18,8 +18,14 @@
   package: Adventurer
   reference: L3HE
 - !ruby/object:Booking
-  name: Pikachu
-  age: '35'
+  name: Milo
+  age: '65'
   date: 11 November 2022
   package: Adventurer
-  reference: UUAE
+  reference: DFC7
+- !ruby/object:Booking
+  name: Joe
+  age: '20'
+  date: 12 December 2022
+  package: Adventurer
+  reference: XIG4
