@@ -122,7 +122,7 @@ Then I created a Trello Board with cards, requirements and to-do tasks.
 #### Control-flow diagram
 Basically, unless user choose to quit, or else any function will also redirect to the main menu.
 
-![alt text](./docs/diagram.png)
+![alt text](./docs/diagram.jpg)
 
 > ### Implementation plan
 **Features:**
