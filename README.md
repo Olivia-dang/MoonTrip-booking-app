@@ -16,10 +16,10 @@ Target audience: Moonlight Travel (the tourism company) and their end-user(touri
 
 > ### Features
 - Show company banner and Moon Trip information
-![alt text](./docs/banner.png)
-![alt text](./docs/tour-introduction.png)
+![alt text](./docs/banner.jpg)
+![alt text](./docs/tour-introduction.jpg)
 - Main menu to choose next action (CRUD)
-![alt text](./docs/menu.png)
+![alt text](./docs/menu.jpg)
 - User friendly error feedback
 - Persistent storage: booking information is stored in a .yml file.
 - Engaging UI: used Ruby Gems to display better user interface and get user input
@@ -65,24 +65,24 @@ If the bash script file doesn't work, please try
 > ### Usage
 ##### 1. Create a booking:
 - Choose date 
-![alt text](./docs/choose-date.png)
+![alt text](./docs/choose-date.jpg)
 - Choose package
-![alt text](./docs/choose-package.png)
+![alt text](./docs/choose-package.jpg)
 - Enter name 
 - Enter age (18 - 99)
-![alt text](./docs/name-age.png)
+![alt text](./docs/name-age.jpg)
 
 Application will show a confirmation of completion
-![alt text](./docs/receipt.png)
+![alt text](./docs/receipt.jpg)
 
 ##### 2. List all booking:
 This function is mainly for travel company and administration to manage all bookings
-![alt text](./docs/list-all.png)
+![alt text](./docs/list-all.jpg)
 
 ##### 3. View your booking:
 Enter booking reference to see a specific booking
-![alt text](./docs/view-bk-1.png)
-![alt text](./docs/view-bk-2.png)
+![alt text](./docs/view-bk-1.jpg)
+![alt text](./docs/view-bk-2.jpg)
 
 ##### 4. Modify your booking:
 Enter booking reference and then fill in booking infomation again (date, package, name, age)
@@ -95,16 +95,16 @@ Quit the program
 > ### Errors handling with user input
 - Invalid name: passenger's name
 Valid name is comprised of letters, "-", ".", " ". After 3 times with invalid name, the program will return to the main menu.
-![alt text](./docs/invalid-name.png)
+![alt text](./docs/invalid-name.jpg)
 - Invalid age: passenger's age
 Passenger's age must be from 18-99. This Moon Trip is for adults only.
 After 3 wrong inputs, the program will return to the main menu.
-![alt text](./docs/invalid-age.png)
+![alt text](./docs/invalid-age.jpg)
 - Invalid booking reference:
 Booking reference is comprised of uppercase letters and numbers. User will have to enter the correct format to pass.
-![alt text](./docs/invalid-bk.png)
+![alt text](./docs/invalid-bk.jpg)
 In `View your booking`, if the booking reference is incorrect (not exist in the database), an error message will be displayed.
-![alt text](./docs/invalid-show-bk.png)
+![alt text](./docs/invalid-show-bk.jpg)
 In `Cancel your booking` and `Modify your booking`, if the booking reference is incorrect, the program will directly return to the main menu.
 
 > ### Design process
@@ -117,7 +117,7 @@ I drafted a control flow model so that i can visualize my imagination about the 
 ![alt text](./docs/sketch.jpg)
 
 Then I created a Trello Board with cards, requirements and to-do tasks. 
-![alt text](./docs/trello.png)
+![alt text](./docs/trello.jpg)
 
 #### Control-flow diagram
 Basically, unless user choose to quit, or else any function will also redirect to the main menu.
