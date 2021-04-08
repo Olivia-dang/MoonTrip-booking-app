@@ -39,11 +39,11 @@ Target audience: Moonlight Travel (the tourism company) and their end-user(touri
 Check if bundler has been installed or not:
 `gem list bundler`
 
-If yes, continue with installing all dependencies in the Gemfile
+**If yes**, continue with installing all dependencies in the Gemfile
 `bundle install`
 
 
-If no, install it and add gems
+**If no**, install it and add gems
 `gem install bundler`
 `bundler init`
 Copy this to the Gemfile:
@@ -61,7 +61,7 @@ Then run `bundle install` in the terminal window.
 Run the bash script file
 `./run_app.sh`
 
-If the bash script file doesn't work, please use
+If the bash script file doesn't work, please try
 `ruby main.rb`
 
 > ### Usage
@@ -127,15 +127,65 @@ Basically, unless user choose to quit, or else any function will also redirect t
 ![alt text](./docs/diagram.png)
 
 > ### Implementation plan
-Features:
-Deadline and checklist tasks
-( Your checklists for each feature should have at least 5 items.)
-Day 1
+**Features:**
+- CRUD functionality (basic for a tour booking system)
+- Engaging UI: using gems to change text font, multiple choice, make table, change text color.
+- Persistent storage: I use .yml file to store bookings data.
+
+**Deadline and checklist tasks**
+
+Day 1:
+- draw a sketch to visualize Moon Trip booking system
+- read more about MVC models
+- start coding `create a booking` function to get user input
+- `create a booking`: 
+    - make a class called Booking as a form for each booking instance.
+    - use `TTY::Prompt.new.ask` to change how to get user input
+- create folders as in MVC models and move my code to different files accordingly
+
 Day 2
+- `create a booking`:
+    - create a mock project learn to use YAML to as persistent data storage.
+    - read and write data to YAML
+    - finish "create a booking" function
+
 Day 3
+- `list all booking`: list all bookings using gem tty-table
+- `view your booking`:
+    - get user input booking reference
+    - find that reference in database
+    - show the booking
+
 Day 4
+- `cancel your booking`
+    - get user input booking reference and find in the database
+    - delete the booking
+- `modify your booking`
+    - get user input booking reference and find in the database
+    - update the booking
+
 Day 5
+- persistent storage: fix storage error (`bookings.yml` cannot be loaded when the app starts, and keeps overwriting new data to the old)
+- use gem `tty-font` to create a banner
+- use `colorize` to highlight when necessary
+
 Day 6
+- learn errors handling and do challenge exercise
+- add errors handling to Moon Trip booking system
+    - `nil` input
+    - `invalid` input (not in the correct format)
+    - `invalid` booking reference (not exist in database)
+
 Day 7
+- learn about TDD and rspec
+- add test cases 
+
+Day 8
+- documentation
 
 > ### Ruby gems and library
+- `tty-promt` is the first gem I used in the application. It helps me to make a main menu using up and down arrows to choose. In "create a new booking" function, I use it for users to choose date and package, so I don't have to worry about validating input. 
+- I used `tty-table` to create a layout for list of bookings and show a booking. Information will be easier to see and checked.
+- `colorize` is very useful in highlighting and `tty-font` is great to make a banner, making the first impresssion more impressive.
+- library `io/console` to access `STDIN.getch`, wait until we press a key to return to the main menu
+- library `securerandom` to create a random reference from 4 letters and/or numbers `SecureRandom.alphanumeric(4)`
