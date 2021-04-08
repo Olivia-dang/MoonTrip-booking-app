@@ -1,7 +1,5 @@
 # T1A3 Workbook
-Full name: Phuong Anh Dang
-
-Student ID: CAS012125
+Full name: Phuong Anh Dang (Olivia)
 
 Sydney, April, 2021
 
