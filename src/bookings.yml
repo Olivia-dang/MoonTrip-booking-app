@@ -6,14 +6,32 @@
   package: Adventurer
   reference: 0NTL
 - !ruby/object:Booking
-  name: Minh
-  age: '28'
-  date: 10 October 2022
-  package: Luxury
-  reference: LA3C
-- !ruby/object:Booking
   name: Laura
   age: '19'
   date: 12 December 2022
   package: Adventurer
   reference: L3HE
+- !ruby/object:Booking
+  name: Olivia
+  age: '28'
+  date: 10 October 2022
+  package: Luxury
+  reference: 7ESW
+- !ruby/object:Booking
+  name: Elon musk
+  age: '40'
+  date: 10 October 2022
+  package: Luxury
+  reference: R4ZO
+- !ruby/object:Booking
+  name: Jkih
+  age: '98'
+  date: 10 October 2022
+  package: Luxury
+  reference: TGZZ
+- !ruby/object:Booking
+  name: Sabrina
+  age: '34'
+  date: 10 October 2022
+  package: Luxury
+  reference: 9PKC
